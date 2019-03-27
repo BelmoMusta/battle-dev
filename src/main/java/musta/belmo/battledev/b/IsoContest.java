@@ -1,15 +1,11 @@
 
 package musta.belmo.battledev.b;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.Scanner;
 
 public class IsoContest {
-    public static void main(String[] args)   {
-
-
-        Scanner sc;sc = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
         int classement = sc.nextInt();
         int nbParticipants = 10000;
@@ -31,9 +27,6 @@ public class IsoContest {
         }
         System.out.println(result);
     }
-
-
-
 
 
 }
