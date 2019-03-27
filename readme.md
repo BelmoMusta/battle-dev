@@ -1,7 +1,7 @@
 # battle-dev
 Battel dev java testing template
 
-This template is made in order to simplify the test pahse during the BattleDev contests.
+This template is made in order to simplify the test phase during the BattleDev contests.
 In order to make use of it, follow the steps below :
 
 1. Download the `zip` file that contains the input and the output files for each case, each test case input file should be named `input{n}.txt` where `{n}` is the order of the test case, for example `input1.txt`.
