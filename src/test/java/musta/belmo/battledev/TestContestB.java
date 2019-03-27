@@ -10,7 +10,6 @@ public class TestContestB extends AbstractTestClass {
 
     @Override
     protected String getTestCasesFilesLocation() {
-        return new java.io.File(getClass().getClassLoader().getResource("BATTLE-DEV").getFile()).getAbsolutePath();
-
+        return new java.io.File("BATTLE-DEV/2").getAbsolutePath();
     }
 }
