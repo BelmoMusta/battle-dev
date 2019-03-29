@@ -13,9 +13,7 @@ public class IsoContest {
 
         for (int i = 0; i < nbWords-1; i++) {
             int currentLength = sc.next().length();
-            if(maxLength<currentLength){
-                maxLength=currentLength;
-            }
+            maxLength = Math.max(currentLength,maxLength);
         }
 
         System.out.println(maxLength);

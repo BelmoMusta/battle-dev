@@ -9,16 +9,14 @@ public class IsoContest {
 
         int classement = sc.nextInt();
         int nbParticipants = 10000;
-        int sommePersonneDepassees = 0;
-        int sommePersonneAvantMoi = 0;
-
+        int diff = 0;
         for (int i = 0; i < 42; i++) {
-            sommePersonneAvantMoi += sc.nextInt();
-            sommePersonneDepassees += sc.nextInt();
+            diff += (sc.nextInt() - sc.nextInt());
+
         }
         String result = "KO";
 
-        int classementFinal = classement - sommePersonneDepassees + sommePersonneAvantMoi;
+        int classementFinal = classement + diff;
 
         if (classementFinal <= 100) {
             result = "1000";
