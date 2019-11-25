@@ -29,17 +29,18 @@ public abstract class AbstractTestClass extends TestCaseFileUtils {
 
     @Test
     public void test() throws Exception {
+        boolean isZip = useZipAsInputOutPutFiles();
         String testCasesLocation = getTestCasesFilesLocation();
-        int nTests = countTestCases(testCasesLocation);
+        int nTests = countTestCases(testCasesLocation, isZip);
 
         for (int i = 1; i <= nTests; i++) {
-            System.setIn(getInputStreamFromInputFile(testCasesLocation, i));
+            System.setIn(getInputStreamFromInputFile(testCasesLocation, i, isZip));
             Class<Object> classToBeTested = getClassToBeTested();
             Method main = classToBeTested.getMethod(MAIN_METHOD, String[].class);
             main.invoke(null, new Object[]{null});
             String result = outputStream.toString("UTF-8").trim();
-            String expected = getOutputFileContent(testCasesLocation, i).trim();
-            collector.checkThat(String.format("test %d didn't pass for the class [%s]", i, classToBeTested.getName()),result, equalTo(expected));
+            String expected = getOutputFileContent(testCasesLocation, i, isZip).trim();
+            collector.checkThat(String.format("test %d didn't pass for the class [%s]", i, classToBeTested.getName()), result, equalTo(expected));
             outputStream.reset();
         }
     }
@@ -49,5 +50,9 @@ public abstract class AbstractTestClass extends TestCaseFileUtils {
         System.setOut(sysOut);
         outputStream = new ByteArrayOutputStream();
         System.setIn(sysIn);
+    }
+
+    protected boolean useZipAsInputOutPutFiles() {
+        return false;
     }
 }
