@@ -1,0 +1,27 @@
+
+Des messages codés ont été trouvés dans le virus caché sur les téléphones piratés !
+Après des heures d'analyse, vous pensez avoir trouvé un algorithme (qui dépend d'un nombre N) pour les décoder.
+Il consiste à faire N groupes de caractères en prenant 1 caractère sur N du message, puis les N qui suivent chacun de ces caractères, et ainsi de suite jusqu'à arriver à la fin du message.
+En mettant ensuite ces groupes bout-à-bout dans leur ordre d'apparition, on retrouve le message d'origine.
+Votre mission est donc de créer un programme qui pourra être utilisé pour automatiser cette tâche fastidieuse, et décoder n'importe quel message à partir de ce dernier et d'une valeur de N.
+
+Données
+
+Entrée
+
+Ligne 1 : l'entier N compris entre 2 et 20
+Ligne 2 : le message à décoder (de taille maximale 500, sans espaces)
+
+On vous garantit que la longueur du message à décoder est un multiple de N.
+
+Sortie
+
+Sur une ligne, le message décodé.
+
+Exemple
+
+Pour l'échantillon suivant :
+3
+RFsarAbi1Dt4eeh
+
+Une fois décodé, le message devient RabDeFritesA14h
